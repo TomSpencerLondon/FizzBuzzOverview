@@ -20,7 +20,8 @@ public class FizzBuzzShould {
   @CsvSource({
       "0, 0",
       "1, 1",
-      "2, 2"
+      "2, 2",
+      "3, Fizz"
   })
   void returns_correct_string_for_number(int input, String output) {
     assertEquals(output, fizzBuzz.convert(input));
