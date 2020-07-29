@@ -7,14 +7,18 @@ public class FizzBuzz {
       return "0";
     }
 
-    if (input % 15 == 0){
+    if (isDivisibleBy(input, 15)){
       return "FizzBuzz";
-    }else if (input % 5 == 0){
+    }else if (isDivisibleBy(input, 5)){
       return "Buzz";
-    }else if (input % 3 == 0) {
+    }else if (isDivisibleBy(input, 3)) {
       return "Fizz";
     }
 
     return String.valueOf(input);
+  }
+
+  private boolean isDivisibleBy(int input, int i) {
+    return input % i == 0;
   }
 }
