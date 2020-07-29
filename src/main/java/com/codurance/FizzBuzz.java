@@ -1,5 +1,8 @@
 package com.codurance;
 
+import java.util.Arrays;
+import java.util.function.Predicate;
+
 public class FizzBuzz {
 
   public String convert(int input) {
@@ -8,13 +11,7 @@ public class FizzBuzz {
       return "0";
     }
 
-    if (isDivisibleBy(input, 3)){
-      result.append("Fizz");
-    }
-
-    if (isDivisibleBy(input, 5)){
-      result.append("Buzz");
-    }
+    appendIf(p -> isDivisibleBy(input, p), result);
 
     if (result.length() == 0){
       result.append(input);
@@ -22,7 +19,24 @@ public class FizzBuzz {
     return result.toString();
   }
 
-  private boolean isDivisibleBy(int input, int i) {
-    return input % i == 0;
+  private void appendIf(Predicate<? super Value> predicate, StringBuilder builder){
+    Arrays.stream(Value.values()).filter(predicate).forEach(p -> builder.append(p.response));
+  }
+
+  private boolean isDivisibleBy(int input, Value value) {
+    return input % value.number == 0;
+  }
+
+  private enum Value {
+    THREE(3, "Fizz"),
+    FIVE(5, "Buzz");
+
+    public int number;
+    public String response;
+
+    Value(int number, String response) {
+      this.number = number;
+      this.response = response;
+    }
   }
 }
