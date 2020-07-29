@@ -21,7 +21,11 @@ public class FizzBuzzShould {
       "0, 0",
       "1, 1",
       "2, 2",
-      "3, Fizz"
+      "3, Fizz",
+      "4, 4",
+      "5, Buzz",
+      "10, Buzz",
+      "15, FizzBuzz"
   })
   void returns_correct_string_for_number(int input, String output) {
     assertEquals(output, fizzBuzz.convert(input));

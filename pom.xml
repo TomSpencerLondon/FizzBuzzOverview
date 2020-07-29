@@ -7,7 +7,7 @@
   <groupId>org.example</groupId>
   <artifactId>FizzBuzzOverview</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <properties>
+<properties>
     <maven.compiler.target>14</maven.compiler.target>
     <maven.compiler.source>14</maven.compiler.source>
   </properties>
@@ -39,5 +39,4 @@
     </dependency>
 
   </dependencies>
-
 </project>
