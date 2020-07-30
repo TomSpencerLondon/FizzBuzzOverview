@@ -16,6 +16,7 @@ public class FizzBuzz {
     if (result.length() == 0){
       result.append(input);
     }
+
     return result.toString();
   }
 
